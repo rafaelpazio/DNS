@@ -118,6 +118,25 @@ class Factory
     }
 
     /**
+     * @param int    $priority
+     * @param int    $weight
+     * @param int    $port
+     * @param string $target
+     *
+     * @return SrvRdata
+     */
+    public static function Srv($priority, $weight, $port, $target)
+    {
+        $rdata = new SrvRdata();
+        $rdata->setPriority($priority);
+        $rdata->setWeight($weight);
+        $rdata->setPort($port);
+        $rdata->setTarget($target);
+
+        return $rdata;
+    }
+
+    /**
      * @param string $nsdname
      *
      * @return NsRdata
